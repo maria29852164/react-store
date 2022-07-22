@@ -11,11 +11,14 @@ import {Home} from "../components/home/home.jsx";
 import {Payments} from "../components/payments/payments.jsx";
 import {Success} from "../components/success/success.jsx";
 import {NotFound} from "../components/not_found/not_found.jsx";
+import {Layout} from "../layouts/layout";
 
 
 export const AppRouter= ()=> {
     return (
         <BrowserRouter>
+
+            <Layout>
             <Switch>
                 <Route exact path='/' component={App}></Route>
                 <Route exact path='/home' component={Home}></Route>
@@ -25,6 +28,7 @@ export const AppRouter= ()=> {
                 <Route exact path='/success' component={Success}></Route>
                 <Route  component={NotFound}></Route>
             </Switch>
+            </Layout>
 
 
 
