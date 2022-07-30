@@ -1,6 +1,8 @@
 import React from "react";
+import {Products} from "../products/products";
+import initialState from "../../initialState";
 export const Home = ()=> {
     return (
-        <h1>Home Component</h1>
+        <Products products={initialState.products}></Products>
     );
 }
