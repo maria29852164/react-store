@@ -3,6 +3,7 @@ import {useState} from "react";
 import stateInit from '../initialState'
 export const useInitialState = ()=> {
     const [state,setState]=useState(stateInit);
+    const {cart} = state
     const addToCard= payload =>{
         setState(state=>{
             return {
@@ -10,6 +11,10 @@ export const useInitialState = ()=> {
                 cart: [...state.cart, payload]
             }
         })
+
+    }
+    const totalCard= ()=> {
+        return cart.length > 0? cart.reduce((total, product)=> total + product.price,0) : 0.0;
 
     }
 
@@ -24,6 +29,7 @@ export const useInitialState = ()=> {
     return {
         state,
         removeToCard,
-        addToCard
+        addToCard,
+        totalCard
     }
 }
