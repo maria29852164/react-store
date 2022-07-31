@@ -1,0 +1,19 @@
+.payment{
+  min-height: 90vh;
+  .payment-content{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+    h3{
+      font-size:2rem;
+      background-color: #024c69;
+      padding: 1rem;
+      border-radius: 1em;
+      color:white;
+    }
+    .payment-button{
+
+    }
+  }
+}

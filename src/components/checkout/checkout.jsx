@@ -1,5 +1,7 @@
 import React from "react";
 import './checkout.scss'
+import {Link} from "react-router-dom";
+
 export const Checkout = ()=> {
     return (
         <div className='container'>
@@ -10,7 +12,8 @@ export const Checkout = ()=> {
                         <div className="checkout-element">
                             <h4>Item product</h4>
                             <span>$100</span>
-                            <button type='button'>Remove order</button>
+                            <button type='button'>                        <i className="fas fa-solid fa-trash"></i>
+                            </button>
 
                         </div>
                     </div>
@@ -18,7 +21,12 @@ export const Checkout = ()=> {
                 </div>
                 <div className="checkout-sidebar">
                     <h3>Total: 400$</h3>
-                    <button type='button'>Buy order</button>
+                    <Link to='/checkout/information'>
+
+                        <button type='button'>Buy order</button>
+
+                    </Link>
+
                 </div>
             </div>
         </div>

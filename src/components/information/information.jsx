@@ -1,5 +1,6 @@
 import React from "react";
 import './information.scss'
+import {Link} from "react-router-dom";
 export const Information = ()=> {
     return (
         <div className='information'>
@@ -26,7 +27,10 @@ export const Information = ()=> {
                        <span> Regresar</span>
                    </div>
                    <div className="information-next">
-                       <span> Pagar </span>
+                       <Link to='/checkout/payments'>
+                           <span> Pagar </span>
+
+                       </Link>
                    </div>
                </div>
 

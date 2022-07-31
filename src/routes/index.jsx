@@ -20,8 +20,7 @@ export const AppRouter= ()=> {
 
             <Layout>
             <Switch>
-                <Route exact path='/' component={App}></Route>
-                <Route exact path='/home' component={Home}></Route>
+                <Route exact path='/' component={Home}></Route>
                 <Route exact path='/checkout' component={Checkout}></Route>
                 <Route exact path='/checkout/information' component={Information}></Route>
                 <Route exact path='/checkout/payments' component={Payments}></Route>
