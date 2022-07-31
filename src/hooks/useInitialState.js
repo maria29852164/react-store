@@ -22,7 +22,7 @@ export const useInitialState = ()=> {
         setState(state=> {
             return {
                 ...state,
-                card: state.card.filter( item => item.id != payload.id)
+                cart: state.cart.filter( item => item.id != payload.id)
             }
         })
     }
