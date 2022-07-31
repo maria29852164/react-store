@@ -9,12 +9,10 @@ const links = [
 ];
 
 export const Header = ()=> {
-    const {state} = useContext(AppContext)
+    const {state, totalCard} = useContext(AppContext)
     const {cart} = state
-    const totalCard= ()=> {
+    const handlerTotal=() => totalCard();
 
-        return cart.length > 0? cart.reduce((total, product)=> total + product.price,0) : 0.0;
-    }
     return (
         <div className='header'>
             <nav className='menu'>
@@ -27,7 +25,7 @@ export const Header = ()=> {
                         links.map(link=> <Link className='item' key={link.path}  to={link.path}>  <i className={link.icon_class}></i></Link> )
                     }
                     {
-                        <div className='item card-header'>Total: { totalCard() }</div>
+                        <div className='item card-header'>Total: { handlerTotal() }</div>
                     }
 
                 </ul>
