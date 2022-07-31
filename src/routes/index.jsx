@@ -12,28 +12,35 @@ import {Payments} from "../components/payments/payments.jsx";
 import {Success} from "../components/success/success.jsx";
 import {NotFound} from "../components/not_found/not_found.jsx";
 import {Layout} from "../layouts/layout";
-
+import {AppContext} from '../context/app.context'
+import {useInitialState} from "../hooks/useInitialState";
 
 export const AppRouter= ()=> {
+    const initialState= useInitialState()
     return (
-        <BrowserRouter>
 
-            <Layout>
-            <Switch>
-                <Route exact path='/' component={Home}></Route>
-                <Route exact path='/checkout' component={Checkout}></Route>
-                <Route exact path='/checkout/information' component={Information}></Route>
-                <Route exact path='/checkout/payments' component={Payments}></Route>
-                <Route exact path='/success' component={Success}></Route>
-                <Route  component={NotFound}></Route>
-            </Switch>
-            </Layout>
+        <AppContext.Provider value={initialState}>
+            <BrowserRouter>
 
-
-
-
+                <Layout>
+                    <Switch>
+                        <Route exact path='/' component={Home}></Route>
+                        <Route exact path='/checkout' component={Checkout}></Route>
+                        <Route exact path='/checkout/information' component={Information}></Route>
+                        <Route exact path='/checkout/payments' component={Payments}></Route>
+                        <Route exact path='/success' component={Success}></Route>
+                        <Route  component={NotFound}></Route>
+                    </Switch>
+                </Layout>
 
 
-        </BrowserRouter>
+
+
+
+
+            </BrowserRouter>
+
+        </AppContext.Provider>
+
     );
 }

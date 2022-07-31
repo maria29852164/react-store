@@ -1,7 +1,7 @@
 import {productPropType} from '../../propTypes/product.type'
 import React, {Fragment} from 'react';
 import './product.scss'
-export const Product= ({product})=> {
+export const Product= ({product,handleAddProduct})=> {
 
     return (
         <Fragment>
@@ -13,7 +13,7 @@ export const Product= ({product})=> {
                 <div className="card-body">
                     <p>$ {product.price}</p>
                     <p>{product.description}</p>
-                    <button className='btn-product'>Comprar</button>
+                    <button className='btn-product' onClick={()=> handleAddProduct(product)}>Comprar</button>
 
                 </div>
 
